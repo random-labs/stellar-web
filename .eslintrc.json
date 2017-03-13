@@ -1,0 +1,60 @@
+{
+  "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "installedESLint": true,
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react", "import"
+    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings"],
+    "rules": {
+      "indent": [
+          "error",
+          2,
+          { "SwitchCase": 1 }
+      ],
+      "linebreak-style": [
+          "error",
+          "unix"
+      ],
+      "quotes": [
+          "error",
+          "single"
+      ],
+      "semi": [
+          "error",
+          "always"
+      ],
+      "import/no-unresolved": [
+          "error"
+      ],
+      "import/default": [
+        "off"
+      ],
+      "eol-last": [
+        "error",
+        "always"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always",
+        { "objectsInObjects": false }
+      ]
+    },
+    "settings": {
+      "import/ignore": [
+        "node_modules",
+        ".(scss|less|css)$"
+      ]
+    }
+}

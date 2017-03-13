@@ -1,0 +1,10 @@
+/*When babel-loader is called in the webpack config file, this file tells it what to do.*/
+{
+  "plugins": [
+    "transform-react-jsx",
+    "transform-object-rest-spread",
+    ["transform-runtime", { "polyfill": false }],
+    "transform-async-to-generator"
+  ],
+  "presets": ["es2015"]
+}
