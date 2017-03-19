@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 /* New instance of the plugin */
@@ -29,5 +30,12 @@ module.exports = {
     ]
   },
   devServer: { historyApiFallback: true },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    /* Create global constants with DefinePlugin */
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.API_URL': JSON.stringify(process.env.API_URL)
+    })
+  ]
 };
