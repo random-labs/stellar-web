@@ -16,8 +16,9 @@ export function signinUser({ email, password }) {
       dispatch({ type: AUTH_USER });
       // Save the JWT token in localstorage
       localStorage.setItem('token', response.data.token);
+
       // Redirect to the route '/feature' programmatically
-      browserHistory.push('/feature');
+      //browserHistory.push('/feature');
     })
     .catch(() => {
       // If request is bad, show error
