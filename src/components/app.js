@@ -1,5 +1,4 @@
-import React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Header from './header';
 
 class App extends Component {
@@ -7,7 +6,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        React redux skeleton
+         {this.props.children}
       </div>
     );
   }
