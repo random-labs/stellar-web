@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 const ROOT_URL = process.env.API_URL;
 import {
   AUTH_USER,
+  UNAUTH_USER,
   AUTH_ERROR
  } from './types';
 
@@ -32,4 +33,9 @@ export function authError(error) {
     type: AUTH_ERROR,
     payload: error
   };
+}
+
+export function signoutUser() {
+  localStorage.removeItem('token');
+  return { type: UNAUTH_USER };
 }
