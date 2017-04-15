@@ -4,7 +4,7 @@
   "scripts": {
     "start:dev": ". ./localvars.sh && NODE_ENV=development && webpack-dev-server",
     "start": ". ./localvars.sh && NODE_ENV=production node server.js",
-    "postinstall": "webpack -p --config webpack.config.js && mkdir -p dist/img && cp assets/img/* dist/img"
+    "postinstall": "webpack -p --config webpack.config.js && mkdir -p dist/styles && cp styles/* dist/styles && mkdir -p dist/img && cp assets/img/* dist/img"
   },
   "engines": {
     "node": ">= 6.0.0",
