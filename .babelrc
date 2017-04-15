@@ -6,5 +6,5 @@
     ["transform-runtime", { "polyfill": false }],
     "transform-async-to-generator"
   ],
-  "presets": ["es2015"]
+  "presets": ["es2015", "stage-1"]
 }

@@ -9,6 +9,7 @@ import {
  } from './types';
 
 export function signinUser({ email, password }) {
+
   //Using redux-thunk, so return function instead of action.
   return function(dispatch) {
     axios.post(`${ROOT_URL}/signin`, { email: email, password: password })
