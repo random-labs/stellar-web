@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "scripts": {
     "start:dev": ". ./localvars.sh && NODE_ENV=development && webpack-dev-server",
-    "start": ". ./localvars.sh && NODE_ENV=production node server.js",
-    "postinstall": "webpack -p --config webpack.config.js && mkdir -p dist/styles && cp styles/* dist/styles && mkdir -p dist/img && cp assets/img/* dist/img"
+    "start": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p --config webpack.prod.config.js",
+    "preinstall": "mkdir -p dist/styles && cp styles/* dist/styles && mkdir -p dist/img && cp assets/img/* dist/img"
   },
   "engines": {
-    "node": ">= 6.0.0",
-    "npm": "3.10.7"
+    "node": ">= 7.8.0",
+    "npm": "4.2.0"
   },
   "dependencies": {
     "axios": "^0.15.3",
