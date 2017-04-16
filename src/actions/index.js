@@ -46,14 +46,27 @@ export function signupUser({ email, password }) {
   };
 }
 
-export function signoutUser() {
-  localStorage.removeItem('token');
-  return { type: UNAUTH_USER };
-}
-
 export function authError(error) {
   return {
     type: AUTH_ERROR,
     payload: error
   };
+}
+
+export function signoutUser() {
+  localStorage.removeItem('token');
+  return { type: UNAUTH_USER };
+}
+
+export function fetchMessage() {
+  return function(dispatch){
+
+    axios.get(ROOT_URL, {
+      headers: { authorization: localStorage.getItem('token') }
+    })
+      .then(response => {
+        console.log(response);
+      });
+
+  }
 }
