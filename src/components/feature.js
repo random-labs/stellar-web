@@ -11,11 +11,14 @@ class Feature extends Component {
   render() {
     return(
 
-      <div>TEST FEATURE</div>
+      <div>{this.props.message}</div>
 
     );
   }
 }
 
+function mapStateToProps(state) {
+  return { message: state.auth.message };
+}
 
-export default connect(null, actions)(Feature);
+export default connect(mapStateToProps, actions)(Feature);
