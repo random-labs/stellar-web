@@ -9,7 +9,7 @@ module.exports = {
   ],
 
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/public/'
   },
@@ -23,15 +23,18 @@ module.exports = {
     })
   ],
 
+  resolve: {
+    modules: [
+      path.join(__dirname, 'src'),
+      'node_modules'
+    ]
+  },
+
   module: {
-    rules: [
-      { test: /\.js?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/ },
-      { test: /\.png$/,
-        loader: 'file-loader' },
-      { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: 'file-loader' }
+    rules: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader' }
     ]
   }
 };
